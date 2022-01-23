@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app = express();
-
+const port = 5000;
 const ObjectId = require('mongodb').ObjectId;
 const { MongoClient } = require('mongodb');
 const uri = "mongodb+srv://Nahidul37003:Sylhetinthebd@cluster0.d8lte.mongodb.net/Nahidul37003?retryWrites=true&w=majority";
@@ -71,4 +71,4 @@ app.delete('/deleteuser/:id',(req,res)=>{
 });
 
 
-app.listen(5000);
+app.listen(process.env.PORT || port);
